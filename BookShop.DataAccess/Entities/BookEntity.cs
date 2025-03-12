@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookShop.DataAccess.Entities
 {
-    class BookEntity
+    public class BookEntity
     {
         public Guid Id { get; set; }
         public string? Title { get; set; }
@@ -14,3 +14,4 @@ namespace BookShop.DataAccess.Entities
         public decimal Price { get; set; }
     }
 }
+    
