@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BookShop.DataAccess.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookShop.DataAccess
 {
@@ -8,5 +9,8 @@ namespace BookShop.DataAccess
         {
             
         }
+
+
+        public DbSet<BookEntity> Books { get; set; }
     }
 }
