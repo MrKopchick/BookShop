@@ -9,7 +9,7 @@ namespace BookShop.Core.Models
     public class Book
     {
         public const int MAX_TITLE_LENGTH = 250;
-        public Book(Guid id, string title, string description, decimal price) 
+        private Book(Guid id, string title, string description, decimal price) 
         {
             Id = id;
             Title = title;
@@ -18,11 +18,11 @@ namespace BookShop.Core.Models
         }
 
         public Guid Id { get;}
-        public string? Title { get; }
-        public string? Description { get;}
-        public decimal Price { get; } 
+        public string Title { get; } = string.Empty;
+        public string Description { get; } = string.Empty;
+        public decimal Price { get; }
 
-        public static (Book book, string Error) Create(Guid id, string title, string description, decimal price)
+        public static (Book Book, string Error) Create(Guid id, string title, string description, decimal price)
         {
             var error = string.Empty;
 
