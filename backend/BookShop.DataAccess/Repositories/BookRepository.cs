@@ -1,10 +1,11 @@
 ﻿using BookShop.Core.Models;
+using BookShop.Core.Abstractons;
 using Microsoft.EntityFrameworkCore;
 using BookShop.DataAccess.Entities;
 
 namespace BookShop.DataAccess.Repositories
 {
-    public class BookRepository
+    public class BookRepository : IBookRepository
     {
         private readonly BookStoreDBContext _context;
         public BookRepository(BookStoreDBContext context) 
