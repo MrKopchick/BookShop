@@ -1,5 +1,10 @@
 using BookShop.DataAccess;
 using Microsoft.EntityFrameworkCore;
+using BookShop.Core.Abstractons;
+using BookShop.DataAccess.Repositories;
+using BookShop.Application.Services;
+using BookShop.Core.Abstractions;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +17,10 @@ builder.Services.AddDbContext<BookStoreDBContext>(
     {
         options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(BookStoreDBContext)));
     });
+
+builder.Services.AddScoped<IBooksService, BooksService>();
+builder.Services.AddScoped<IBookRepository, BookRepository>();
+
 
 var app = builder.Build();  
 
